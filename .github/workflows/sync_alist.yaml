@@ -13,8 +13,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write  # 赋予 GITHUB_TOKEN 推送权限
     env:
       VERSION_FILE: ${{ github.workspace }}/alist_version
     steps:
