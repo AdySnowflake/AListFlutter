@@ -1,13 +1,13 @@
 name: Build
 
 on:
-  push:
-    branches:
-      - "master"
-    paths-ignore:
-      - "*.md"
-      - "*.sh"
-      - "release.yaml"
+  # push:
+  #   branches:
+  #     - "master"
+  #   paths-ignore:
+  #     - "*.md"
+  #     - "*.sh"
+  #     - "release.yaml"
   #      - "sync_frp.yaml"
 
   workflow_dispatch:
@@ -56,11 +56,11 @@ jobs:
         env:
           ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
 
-      - name: Upload AAR
-        uses: actions/upload-artifact@v4
-        with:
-          name: "AList"
-          path: "${{ github.workspace }}/android/app/libs/*.aar"
+      # - name: Upload AAR
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: "AList"
+      #     path: "${{ github.workspace }}/android/app/libs/*.aar"
 
       - name: Init Signature
         run: |

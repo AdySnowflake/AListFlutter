@@ -2,7 +2,7 @@ name: CheckAList
 
 on:
   schedule:
-    - cron: "0 5,17 * * *" # 每日5点和17点执行
+    - cron: "0 1,13 * * *" # 每日9点和21点执行 (UTC+8)
   workflow_dispatch:
   push:
     branches:
@@ -13,6 +13,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # 赋予 GITHUB_TOKEN 推送权限
     env:
       VERSION_FILE: ${{ github.workspace }}/alist_version
     steps:
